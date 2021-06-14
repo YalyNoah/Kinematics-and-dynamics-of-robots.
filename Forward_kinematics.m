@@ -7,7 +7,6 @@ syms d2;
 d1=0.5;
 a2=0.3;
 a3=0.25;
-a4=0.05;
 d5=0.15;
 
 %Forward kinematics(4.1.4)
@@ -17,7 +16,7 @@ d5=0.15;
     A3=[1 0 0 a2; 0 0 1 0; 0 -1 0 0; 0 0 0 1];   
     A4=[cos(t2) 0 -sin(t2) a3*cos(t2); sin(t2) 0 cos(t2) a3*sin(t2); 0 -1 0 0; 0 0 0 1]; 
     A5=[cos(t3) 0  -sin(t3)  0; sin(t3) 0 cos(t3) 0; 0 -1 0 0; 0 0 0 1]; 
-    A6=[cos(t4) 0 sin(t4) a4*cos(t4); sin(t4) 0 -cos(t4) a4*sin(t4); 0 1 0 0; 0 0 0 1];
+    A6=[cos(t4) 0 sin(t4) 0; sin(t4) 0 -cos(t4) 0; 0 1 0 0; 0 0 0 1];
     A7=[cos(t5) -sin(t5) 0 0; sin(t5) cos(t5) 0 0; 0 0 1 d5; 0 0 0 1];
    
     %transformation matrix end unit(4.1.4.2)
@@ -39,7 +38,7 @@ for (k=1:5)
     d0_1=subs((A1*[0;0;0;1]), {t1, t2, t3, t4, t5, d2}, {pp});
     d0_2=subs((A1*A2*[0;0;0;1]), {t1, t2, t3, t4, t5, d2}, {pp});
     d0_3=subs((A1*A2*A3*[0;0;0;1]), {t1, t2, t3, t4, t5, d2}, {pp});
-	d0_4=subs((A1*A2*A3*A4*[0;0;0;1]), {t1, t2, t3, t4, t5, d2}, {pp});
+    d0_4=subs((A1*A2*A3*A4*[0;0;0;1]), {t1, t2, t3, t4, t5, d2}, {pp});
     d0_5=subs((A1*A2*A3*A4*A5*[0;0;0;1]), {t1, t2, t3, t4, t5, d2}, {pp});
     d0_6=subs((A1*A2*A3*A4*A5*A6*[0;0;0;1]), {t1, t2, t3, t4, t5, d2}, {pp});
     d0_7=subs((A1*A2*A3*A4*A5*A6*A7*[0;0;0;1]), {t1, t2, t3, t4, t5, d2}, {pp})
