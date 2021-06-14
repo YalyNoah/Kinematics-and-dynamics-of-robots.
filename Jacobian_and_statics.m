@@ -2,7 +2,7 @@
 
 %Variable and constant
 syms t1 t2 t3 t4 t5; 
-syms d1 d2 a2 a3 a4 d5;
+syms d1 d2 a2 a3 d5;
 
     %transformation matrix 
     A1=[cos(t1) -sin(t1) 0 0 ; sin(t1) cos(t1) 0 0; 0 0 1 d1; 0 0 0 1];
@@ -28,7 +28,7 @@ syms d1 d2 a2 a3 a4 d5;
     d0_1=(A1*[0;0;0;1]);
     d0_2=(A1*A2*[0;0;0;1]);
     d0_3=(A1*A2*A3*[0;0;0;1]);
-	d0_4=(A1*A2*A3*A4*[0;0;0;1]);
+    d0_4=(A1*A2*A3*A4*[0;0;0;1]);
     d0_5=(A1*A2*A3*A4*A5*[0;0;0;1]);
     d0_6=(A1*A2*A3*A4*A5*A6*[0;0;0;1]);
     d0_7=(A1*A2*A3*A4*A5*A6*A7*[0;0;0;1]);
@@ -96,5 +96,5 @@ syms d1 d2 a2 a3 a4 d5;
     syms Mg %the force
     F=[0;0;-Mg]; %forces
     T=[0;0;0]; %Torques
-    tau=simplify(transpose(J)*[F;T]) %Vector forces for each joint
+    tau=-simplify(transpose(J)*[F;T]) %Vector forces for each joint
 
