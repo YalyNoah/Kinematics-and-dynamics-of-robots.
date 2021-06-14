@@ -1,4 +1,4 @@
-%motion planning
+%motion planning (only location, the Rotation is in the simulation)
 
 %Setting times and constant
 T=15;  %Total time
