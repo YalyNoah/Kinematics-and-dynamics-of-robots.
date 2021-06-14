@@ -4,7 +4,6 @@
 d1=0.5;
 a2=0.3;
 a3=0.25;
-a4=0.05;
 d5=0.15;
 
 %The user enters coordinates (we used the points from the forword
